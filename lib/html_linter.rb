@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'nokogiri'
 require 'colorize'
 
@@ -8,16 +10,16 @@ class MyLint
   end
 
   def validate
-  doctype
-  meta_tag
-  head_tag
-  body_tag
-  unordered_list
-  lang_length
-  inline_style
-end
+    doctype
+    meta_tag
+    head_tag
+    body_tag
+    unordered_list
+    lang_length
+    inline_style
+ end
 
-private
+  private
 
   def doctype
     value = document.search('doctype')
@@ -41,7 +43,7 @@ private
         end
       end
     end
-end
+  end
 
   def unordered_list
     value = document.search('ul')
@@ -53,25 +55,24 @@ end
   end
 
   def head_tag
-  value = document.search('head')
-  if value.empty? || value.text.empty?
-    puts '[TEST FAILED] : '.red + ' head tag is missing'
-  else
-    puts '[TEST PASSED] : '.green + 'head tag found'
+    value = document.search('head')
+    if value.empty? || value.text.empty?
+      puts '[TEST FAILED] : '.red + ' head tag is missing'
+    else
+      puts '[TEST PASSED] : '.green + 'head tag found'
+    end
   end
-end
 
-def body_tag
-value = document.search('head')
-if value.empty? || value.text.empty?
-  puts '[TEST FAILED] : '.red + ' body tag is missing'
-else
-  puts '[TEST PASSED] : '.green + 'body tag found'
-end
-end
+  def body_tag
+    value = document.search('head')
+    if value.empty? || value.text.empty?
+      puts '[TEST FAILED] : '.red + ' body tag is missing'
+    else
+      puts '[TEST PASSED] : '.green + 'body tag found'
+    end
+  end
 
-
- def lang_length
+  def lang_length
     lang = document.search('//html[@lang]')
     if lang.empty?
       puts '[TEST FAILED] : '.red + 'lang not defined'
@@ -84,17 +85,14 @@ end
         end
       end
     end
-  end
+   end
 
   def inline_style
-      value = document.search('style')
-      if value.empty? || value.text.empty?
-        puts '[TEST PASSED] : '.green + 'Inline styling not detected'
-      else
-        puts '[TEST FAILED] : '.red + 'Move inline style to css file'
-      end
+    value = document.search('style')
+    if value.empty? || value.text.empty?
+      puts '[TEST PASSED] : '.green + 'Inline styling not detected'
+    else
+      puts '[TEST FAILED] : '.red + 'Move inline style to css file'
     end
-
-
-
+  end
 end

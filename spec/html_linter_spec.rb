@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/html_linter'
 require 'nokogiri'
 
@@ -82,21 +84,21 @@ describe MyLint do
     end
   end
 
-    it 'returns an error if lang length is too long' do
-      value  = document.search('html[@lang]').all? do |attr|
+  it 'returns an error if lang length is too long' do
+    value = document.search('html[@lang]').all? do |attr|
       attr.values.size >= 5
       expect(value).to eq(true)
-      end
-     end
+    end
+  end
 
-     it 'returns true if lang length is too long' do
-       value  = document.xpath('html[@lang]').all? do |attr|
-       value = attr.values.size >= 5
-       expect(value).not_to eq(false)
-       end
-      end
+  it 'returns true if lang length is too long' do
+    value = document.xpath('html[@lang]').all? do |attr|
+      value = attr.values.size >= 5
+      expect(value).not_to eq(false)
+    end
+  end
 
-    describe '#inline_style' do
+  describe '#inline_style' do
     it 'returns true if there is no style tag ' do
       value = document.search('style')
       expect(value.empty?).to eq(true)
@@ -107,5 +109,4 @@ describe MyLint do
       expect(!value.empty?).to eq(false)
     end
   end
-
 end
