@@ -38,8 +38,6 @@ Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
   AllowForAlignment: false
-Layout/LineLength:
-  Max: 150
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
