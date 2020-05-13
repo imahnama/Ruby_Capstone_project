@@ -7,12 +7,12 @@ describe MyLint do
   describe '#doctype' do
     it 'returns true if doctype is declared' do
       value = document.search('doctype')
-      expect(!value.empty?).to eq(true)
+      expect(value.empty?).to eq(true)
     end
 
     it 'returns an error if doctype is not present' do
       value = document.search('doctype')
-      expect(!value.empty?).not_to eq(false)
+      expect(value.empty?).not_to eq(false)
     end
   end
 
@@ -76,22 +76,15 @@ describe MyLint do
 
   describe '#lang_length' do
     it 'returns an error if lang attribute is not defined ' do
-      value = document.search('html[@lang]')
-      expect(value.empty?).to eq(true)
-    end
-  end
-
-  it 'returns an error if lang length is too long' do
-    value = document.search('html[@lang]').all? do |attr|
-      attr.values.size >= 5
-      expect(value).to eq(true)
+      value = document.search('//html[@lang]')
+      expect(!value.empty?).to eq(true)
     end
   end
 
   it 'returns true if lang length is too long' do
     value = document.xpath('html[@lang]').all? do |attr|
       value = attr.values.size >= 5
-      expect(value).not_to eq(false)
+      expect(value).to eq(false)
     end
   end
 
