@@ -1,10 +1,7 @@
-# frozen_string_literal: true
-
 require_relative '../lib/html_linter'
 require 'nokogiri'
 
 describe MyLint do
-  mylint = MyLint.new
   let(:document) { Nokogiri::HTML.parse(open('index.html')) }
 
   describe '#doctype' do

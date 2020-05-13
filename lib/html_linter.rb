@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'nokogiri'
 require 'colorize'
 
@@ -17,7 +15,7 @@ class MyLint
     unordered_list
     lang_length
     inline_style
- end
+  end
 
   private
 
@@ -85,7 +83,7 @@ class MyLint
         end
       end
     end
-   end
+  end
 
   def inline_style
     value = document.search('style')
