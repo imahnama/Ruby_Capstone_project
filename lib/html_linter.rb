@@ -63,13 +63,12 @@ class MyLint
 
   def body_tag
     value = document.search('//body')
-     # puts value
     if value.text.empty?
       puts '[TEST FAILED] : '.red + ' body contents are missing'
     else
       puts '[TEST PASSED] : '.green + 'body contents found'
     end
-    end
+  end
 
   def lang_length
     lang = document.search('//html[@lang]')
