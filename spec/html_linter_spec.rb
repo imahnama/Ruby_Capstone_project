@@ -51,12 +51,12 @@ describe MyLint do
   end
 
   describe '#body_tag' do
-    it 'returns true if body tag is found' do
+    it 'returns true if body contents are found' do
       value = document.search('body')
       expect(!value.empty?).to eq(true)
     end
 
-    it 'returns false if head tag is not found' do
+    it 'returns false if body contents are not found' do
       value = document.search('body')
       expect(!value.empty?).not_to eq(false)
     end
