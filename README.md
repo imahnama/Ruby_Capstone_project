@@ -1,6 +1,6 @@
 # Ruby-Capstone-Project
 # My_Linter
-My_Linter is a linter that provides feedback if CSS best practices are not met.
+My_Linter is a linter that provides feedback if HTML best practices are not met.
 
 ## How it works
 
@@ -9,7 +9,7 @@ The Linter is for beginners who are not familiar with the CSS best practices. Th
 - The Linter checks if doctype is declared at the beginning of the file.
 - It checks if meta tag description is declared.
 - It checks if head tag is found.
-- It checks if body tag is found.
+- It checks if body contents are found.
 - It checks if ul tag is found.
 - It checks if lang attribute is found and that it is not too long.
 - It checks that no elements have an inline style
@@ -62,14 +62,16 @@ Run this command line: bin/main.rb
 
 Contributions, issues and feature requests are all welcome! Start by:
 
-Forking the project
-Cloning the project to your local machine
-cd into the project directory
-Run git checkout -b your-branch-name
-Make your contributions
-Push your branch up to your forked repository
-Open a Pull Request with a detailed description to the develop branch of the original project for a review
-Please feel free to contribute to any of these!
+## Setting Up Project
+
+- Forking the project
+- Cloning the project to your local machine
+- cd into the project directory
+- Run git checkout -b your-branch-name
+- Make your contributions
+- Push your branch up to your forked repository
+- Open a Pull Request with a detailed description to the develop branch of the original project for a review
+- Please feel free to contribute to any of these!
 
 Feel free to check the [issues/](https://github.com/imahnama/Ruby-Capstone-Project/issues).
 
